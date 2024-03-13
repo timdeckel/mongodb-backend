@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js" defer></script>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">    
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <h3></h3>
+    </header>
+    <div class="reload-info">
+        <p class="tag">Click on the button to uppdate the latest information</p>
+            <button Onclick="window.location.reload();">Update</button>
+        <p class="tag">The information reloads every hour</p>
+    </div>
+    <section class="main-wraper">        
+        <section>
+            <div class="wraperTime">
+                <h4>When it was updated latest:</h4>
+                <p class="time"></p>
+                <p class="timeISO"></p>
+                <p class="timeduk"></p>
+            </div>
+            <div class="wraperUSD">
+                <h4>This is where you can find USD</h4>
+                <p class="info">Rate:</p>
+                <p class="USDrate"></p>
+                <p class="info">Description:</p>
+                <p class="USDdesc"></p>
+                <p class="info">Float description:</p>
+                <p class="USDfloat"></p>
+            </div>
+        </section>
+        <section>
+            <div class="wraperGBP">
+                <h4>This is where you can find GBP:</h4>
+                <p class="info">Rate:</p>
+                <p class="GBPrate"></p>
+                <p class="info">Description:</p>
+                <p class="GBPdesc"></p>
+                <p class="info">Float description:</p>
+                <p class="GBPfloat"></p>
+            </div>
+            <div class="wraperEUR">
+                <h4>This is where you can find EUR:</h4>
+                <p class="info">Rate:</p>
+                <p class="EURrate"></p>
+                <p class="info">Description:</p>
+                <p class="EURdesc"></p>
+                <p class="info">Float description:</p>
+                <p class="EURfloat"></p>
+            </div>
+        </section>
+    </section>
+</body>
+</html>
