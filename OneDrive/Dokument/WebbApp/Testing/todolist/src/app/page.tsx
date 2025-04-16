@@ -1,3 +1,4 @@
+'use client'
 import Header from "@/components/Header";
 import USP from "@/components/USPs";
 import TaskList from "@/components/TaskList";
