@@ -16,7 +16,7 @@ export const DeletePostButton = ({ postId }: { postId: string }) => {
   return (
     <button
       onClick={() => mutate()}
-      className="rounded-xl bg-neutral-700 p-2 text-white hover:bg-neutral-500"
+      className="rounded bg-gray-700 p-2 text-white hover:bg-neutral-500 cursor-pointer"
     >
       Delete
     </button>

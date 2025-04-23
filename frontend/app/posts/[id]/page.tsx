@@ -27,20 +27,20 @@ export default async function PostPage({
   const isAuthor = user && user.id === post.author.id;
 
   return (
-    <main className="main p-6">
-      <article className="space-y-4 rounded-lg bg-gray-500 p-6">
-        <header className="flex items-start justify-between">
+    <main className="main p-6 font-bold bg-gray-600 p-2 m-4 rounded">
+      <article className="space-y-4 rounded-lg py-6">
+        <header className="flex items-start justify-between font-bold bg-gray-500 p-2 rounded">
           <div className="space-y-1">
-            <span className="flex items-center gap-2 text-zinc-600">
-              {post.author.username}
+            <span className="flex items-center gap-2 font-bold rounded ">
+              Author: {post.author.username}
             </span>
-            <h1 className="text-2xl font-bold">{post.title}</h1>
+            <h1 className="text-2xl ">{post.title}</h1>
           </div>
           {isAuthor && (
             <div className="flex gap-3">
               <Link
                 href={`/posts/${post.id}/edit`}
-                className="rounded-xl bg-neutral-700 p-2 text-white hover:bg-neutral-500"
+                className="font-bold bg-gray-700 p-2 rounded hover:bg-neutral-500 p-2"
               >
                 edit
               </Link>
@@ -48,23 +48,25 @@ export default async function PostPage({
             </div>
           )}
         </header>
-        <p>{post.content}</p>
+        <p className="font-bold bg-gray-500 p-2 rounded">{post.content}</p>
       </article>
-      {user && <CreateCommentForm postId={post.id} />}
-      {post.comments &&
-        post.comments.length > 0 &&
-        post.comments?.map((comment, index) => (
-          <div className="relative m-2 rounded bg-gray-300 p-4" key={index}>
-            <h2 className="flex items-center gap-2">
-              {comment.author.username}
-            </h2>
-            <p>{comment.content}</p>
+      <div className="font-bold bg-gray-500 p-2 rounded">
+        {user && <CreateCommentForm postId={post.id} />}
+        {post.comments &&
+          post.comments.length > 0 &&
+          post.comments?.map((comment, index) => (
+            <div className="relative my-2 rounded bg-gray-600 p-4" key={index}>
+              <h2 className="flex items-center gap-2">
+                {comment.author.username}
+              </h2>
+              <p>{comment.content}</p>
 
-            {(isAuthor || user?.id === comment.author._id) && (
-              <DeleteCommentButton postId={post.id} commentId={comment._id} />
-            )}
-          </div>
-        ))}
+              {(isAuthor || user?.id === comment.author._id) && (
+                <DeleteCommentButton postId={post.id} commentId={comment._id} />
+              )}
+            </div>
+          ))}
+      </div>
     </main>
   );
 }

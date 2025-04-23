@@ -38,22 +38,25 @@ export const EditPostForm = ({
   return (
     <form
       onSubmit={handleSubmit((values) => mutate(values))}
-      className="flex w-full flex-col gap-4"
+      className="flex w-full flex-col gap-2 rounded bg-gray-500 p-2"
     >
       <input
         {...register("title")}
         type="text"
         placeholder="title"
-        className="input"
+        className="border-1 border-gray-400 rounded p-2"
       />
       <FormError error={errors.title?.message} />
       <textarea
         {...register("content")}
         placeholder="content"
-        className="input min-h-96 rounded-3xl"
+        className="border-1 border-gray-400 rounded p-2"
       />
       <FormError error={errors.content?.message} />
-      <button type="submit" className="button-primary">
+      <button
+        type="submit"
+        className="cursor-pointer px-10 py-2 m-auto bg-gray-600 rounded hover:bg-neutral-500"
+      >
         {isPending ? "saving changes..." : "save changes"}
       </button>
     </form>

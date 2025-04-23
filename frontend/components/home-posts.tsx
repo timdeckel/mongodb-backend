@@ -33,13 +33,13 @@ export const HomePosts = ({
   const currentPosts = data.pages.map((page) => page?.posts || []).flat();
 
   return (
-    <section className="flex flex-col items-center gap-10">
+    <section className="flex flex-col items-center gap-4 p-4">
       {currentPosts.map(({ id, title, author, comments }) => (
         <div
           key={id}
           role="button"
           onClick={() => router.push(`/posts/${id}`)}
-          className="flex w-full flex-col rounded-md bg-gray-600 p-4"
+          className="flex w-full flex-col rounded-md bg-gray-600 p-4 hover:bg-gray-500 cursor-pointer"
         >
           <span className="flex items-center gap-2 ">{author.username}</span>
           <h2 className="text-lg font-bold">{title}</h2>

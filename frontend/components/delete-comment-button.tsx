@@ -20,7 +20,7 @@ export const DeleteCommentButton = ({
   return (
     <button
       onClick={() => mutate()}
-      className="absolute right-3 top-3 rounded bg-neutral-700 p-1 text-sm text-white hover:bg-neutral-500"
+      className="absolute right-3 top-3 rounded bg-gray-700 p-1 text-sm text-white cursor-pointer hover:bg-neutral-500"
     >
       Delete Comment
     </button>

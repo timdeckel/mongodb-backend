@@ -26,22 +26,25 @@ const LogInForm = () => {
   return (
     <form
       onSubmit={handleSubmit((values) => mutate(values))}
-      className="flex flex-col  gap-12 my-8"
+      className="flex flex-col flex w-full flex-col gap-2 font-bold bg-gray-500 p-2 rounded  gap-12 my-8"
     >
-      <p>Enter your details!</p>
+      <p className="text-xl">Enter your details!</p>
       <input
         {...register("username")}
-        className="input"
+        className="border-1 border-gray-400 rounded p-2"
         placeholder="username"
       />
       <FormError error={errors.username?.message} />
       <input
         {...register("password")}
-        className="input"
+        className="border-1 border-gray-400 rounded p-2"
         placeholder="password"
       />
       <FormError error={errors.password?.message} />
-      <button type="submit" className="button">
+      <button
+        type="submit"
+        className="font-bold bg-gray-600 px-10 py-2 m-auto rounded hover:bg-neutral-500"
+      >
         Log In
       </button>
     </form>

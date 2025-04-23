@@ -1,10 +1,10 @@
-import { CreatePostForm } from './form'
+import { CreatePostForm } from "./form";
 
 export default function CreatePage() {
   return (
-    <main className='main'>
-      <h1 className='mb-8 pl-2 text-2xl font-bold'>create post</h1>
+    <main className="font-bold bg-gray-500 p-4 m-4 rounded ">
+      <h1 className="font-bold text-xl ">create post</h1>
       <CreatePostForm />
     </main>
-  )
+  );
 }

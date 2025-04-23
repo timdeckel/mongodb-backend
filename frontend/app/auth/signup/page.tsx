@@ -1,13 +1,12 @@
-import SignUpForm from "./signUpForm"
-
+import SignUpForm from "./signUpForm";
 
 const SignUp = () => {
-    return(
-        <div className="mx-w-[1200] m-auto">
-            <h1>Create an acount</h1>
-            <SignUpForm />
-        </div>
-    )
-}
+  return (
+    <div className="flex w-full flex-col gap-2 font-bold bg-gray-600 p-2 rounded">
+      <h1>Create an acount</h1>
+      <SignUpForm />
+    </div>
+  );
+};
 
-export default SignUp
+export default SignUp;

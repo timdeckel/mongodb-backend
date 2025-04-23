@@ -33,15 +33,18 @@ export const CreateCommentForm = ({ postId }: { postId: string }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="my-10 flex w-full flex-col gap-4"
+      className="flex w-full flex-col gap-4 "
     >
       <textarea
         {...register("content")}
         placeholder="comment..."
-        className="input min-h-10 rounded-3xl"
+        className="input font-bold bg-gray-600 p-2 rounded"
       />
       <FormError error={errors.content?.message} />
-      <button type="submit" className="button-primary">
+      <button
+        type="submit"
+        className=" m-auto font-bold bg-gray-600 py-2 px-10 cursor-pointer rounded hover:bg-neutral-500"
+      >
         {isPending ? "uploading comment..." : "comment"}
       </button>
     </form>
